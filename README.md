@@ -1,3 +1,5 @@
+![Static Badge](https://img.shields.io/badge/RISC--V-processor-FDB515) ![Static Badge](https://img.shields.io/badge/Assembly-only-FF5800) ![Static Badge](https://img.shields.io/badge/License-GPL--3.0-FF0090) ![Static Badge](https://img.shields.io/badge/Embedded-device-50FF00)
+
 # Low-Level_BL602
 This project aims to document and shed light on parts of the [**BouffaloLab602**](https://en.bouffalolab.com/product/?type=detail&id=1)  
 
@@ -23,6 +25,8 @@ with internals and peripherals through [**MMIO**](https://en.wikipedia.org/wiki/
   - SiFive CLIC [scpecifications](https://github.com/marceg/clic-spec/tree/master?tab=readme-ov-file)
   - CLIC/CLINT [adress mapping](https://github.com/openshwprojects/OpenBL602/blob/master/components/platform/soc/bl602/bl602_std/bl602_std/RISCV/Core/Include/clic.h)
 
+### Directly controlling [GPIO](https://gtker.com/running-assembly-on-the-bl602-risc-v-microcontroller-and-directly-controlling-gpio/)
+
 ### Docs from Bouffalo Lab:  
   - Reference [manual](https://github.com/bouffalolab/bl_docs/blob/main/BL602_RM/en/BL602_BL604_RM_1.2_en.pdf)
   - [Datasheet](https://github.com/bouffalolab/bl_docs/blob/main/BL602_DS/en/BL602_BL604_DS_1.6_en.pdf)
@@ -35,7 +39,7 @@ with internals and peripherals through [**MMIO**](https://en.wikipedia.org/wiki/
   - RISC-V ISA [Manual](https://riscv-software-src.github.io/riscv-unified-db/manual/html/isa/isa_20240411/index.html)
   - Official ISA [Specs](https://riscv.org/specifications/ratified/) by RISC-V International
 
-### Toolchain:  
+### Workflow:  
   - VSCodium [code editor](https://github.com/VSCodium/vscodium)
   - GCC
   - Blflash [flasher utility](https://github.com/spacemeowx2/blflash)
