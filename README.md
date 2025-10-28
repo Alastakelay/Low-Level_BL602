@@ -1,5 +1,11 @@
 ![Static Badge](https://img.shields.io/badge/RISC--V-processor-FDB515) ![Static Badge](https://img.shields.io/badge/Assembly-only-FF5800) ![Static Badge](https://img.shields.io/badge/License-GPL--3.0-FF0090) ![Static Badge](https://img.shields.io/badge/Embedded-device-50FF00)
 
+# IMPORTANT!
+# I sadly will not be able to contribute to this Repo for a **long time**  
+# There's nothing I'd rather do than explore the mysteries of that interesting chip with shitty documentation, but that will have to wait until **summer 2026**  
+# The reason being the lack of time that I freely dispose of as a human in modern-day society  
+# In the meantime enjoy what little code I have for you, consult the General E24 [core documentation](https://www.sifive.com/document-file/e24-core-complex-manual), and submit issues or ideas for current or future projects
+
 # Low-Level_BL602
 This project aims to document and shed light on parts of the [**BouffaloLab602**](https://en.bouffalolab.com/product/?type=detail&id=1)  
 
