@@ -1,3 +1,5 @@
+.set delay, 0x20A1200
+
 .section .text
 .globl _start
 .globl main
@@ -18,13 +20,14 @@ main:
 		la t4, (interrupt_service_routine + 2)		#load address of interrupt_service_routine ([1:0] select CLIC/CLINT & vectored/direct modes)
 		csrrw zero, mtvec, t4	#write trap handler address & trap mode to mtvec
 	setup_timer_interrupt:
-		li t5, 0x9896800
+		li t5, delay
 		sw t5, 0x10(s3)			#(TMR2_0)alarm value <-- 0x9896800 (160.000.000 cycles =~ 1 sec)(assumes 160Mhz)
 		sw s0, 0x5c(s3)			#(TPLCR2) reload control <-- 1 (reload upon comparison match)
 		sw s0, 0x44(s3)			#(TIER2) interrupt enable <-- 1 (enable interrupt generation)
 		sw s0, 0x90(s3)			#(TILR2) interrupt mode <-- 1 (pulse interrupt)
 		li t6, 2
 		sw t6, 0x84(s3)			#(TCER) count enable <-- 2
+		sw s1, 0(s2)			//turn led on
 		waiting:
 			wfi					#wait until timer interrupt occurs, the wait again
 		j waiting
@@ -55,3 +58,4 @@ amoxor.w zero, s1, (s2)		#toggle led (amo not supported for this part of mmio as
 csrrsi zero, 0x300, 0b1000 	#set mstatus.mie (set by default)
 csrrw zero, 0x304, s1 		#set mie.meie (inactive in CLIC mode)
 */
+
