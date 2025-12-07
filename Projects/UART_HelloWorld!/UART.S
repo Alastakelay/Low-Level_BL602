@@ -38,17 +38,17 @@ main:
     ori x3, x4, 1                           //stop constant
 
 //load the character constants into registers
-    li s1, 0x48                             //load char 'H'
-    li s2, 0x65                             //load char 'e'
-    li s3, 0x6C                             //load char 'l'
-    li s4, 0x6F                             //load char 'o'
-    li s5, 0x20                             //load char ' '
-    li s6, 0x57                             //load char 'W'
-    li s7, 0x72                             //load char 'r'
-    li s8, 0x64                             //load char 'd'
-    li s9, 0x21                             //load char '!'
-    li s10, 0x0D                            //load char '\r'
-    li s11, 0x0A                            //load char '\n'
+    li s1, 'H'                              //load char 'H'
+    li s2, 'e'                              //load char 'e'
+    li s3, 'l'                              //load char 'l'
+    li s4, 'o'                              //load char 'o'
+    li s5, ' '                              //load char ' '
+    li s6, 'W'                              //load char 'W'
+    li s7, 'r'                              //load char 'r'
+    li s8, 'd'                              //load char 'd'
+    li s9, '!'                              //load char '!'
+    li s10, '\r'                            //load char '\r'
+    li s11, '\n'                            //load char '\n'
 
 //push string "Hello World!\r\n" byte by byte into uart tx FIFO
 print:
