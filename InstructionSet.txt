@@ -1,0 +1,87 @@
+Implemented Instructions: (124 found)    //please let me know if you find more implemented instructions
+    I: (42)
+        lui             jal             lb              fence
+        auipc           jalr            lbu             
+        add                             lh              ebreak
+        addi            beq             lhu             ecall
+        sub             bne             lw
+                        blt                             wfi
+        and             bltu            sb              mret
+        andi            bge             sh
+        or              bgeu            sw
+        ori
+        xor             slt
+        xori            slti
+                        sltu
+        sll             sltiu
+        slli
+        srl
+        srli
+        sra
+        srai
+
+    M: (8)
+        mul             div
+        mulh            divu
+        mulhu           rem
+        mulhsu          remu
+
+    Zaamo:  (9)         //Zalrsc is the unimplemented part of the A extension
+        amoadd.w
+        amoswap.w
+                        amoand.w
+        amomin.w        amoor.w
+        amominu.w       amoxor.w
+        amomax.w
+        amomaxu.w
+ 
+    F:  (26)
+        fadd.s          fcvt.s.w        feq.s           fclass.s
+        fmadd.s         fcvt.s.wu       fle.s
+        fnmadd.s        fcvt.w.s        flt.s
+        fsub.s          fcvt.wu.s
+        fmsub.s
+        fnmsub.s        fmv.x.w
+        fmul.s          fmv.w.x
+        fdiv.s
+        fsqrt.s         flw
+                        fsw
+        fmax.s
+        fmin.s
+
+        fsgnj.s
+        fsgnjn.s
+        fsgnjx.s
+
+    C: (31)
+        c.mv            c.j             c.lw            c.ebreak
+        c.li            c.jr            c.sw
+        c.lui           c.jal           c.lwsp
+        c.add           c.jalr          c.swsp
+        c.addi
+        c.sub           c.beqz          c.flw
+        c.addi4spn      c.bnez          c.fsw
+        c.addi16sp                      c.flwsp
+                                        c.fswsp
+        c.and
+        c.andi
+        c.or
+        c.xor
+
+        c.slli
+        c.srli
+        c.srai
+
+        c.nop
+
+    X: (1)
+        cease       #.word 0x30500073   #Custom SiFive privileged instruction that halts the core until it is reset (only available in M-mode)
+    Zicsr: (6)
+        csrrw
+        csrrwi
+        csrrs
+        csrrsi
+        csrrc
+        csrrci
+    Zifencei: (1)
+        fence.i
