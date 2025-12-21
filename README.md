@@ -8,7 +8,7 @@
 # BareMetal_BL602
 This project aims to document and shed light on parts of the [**BouffaloLab602**](https://en.bouffalolab.com/product/?type=detail&id=1)  
 
->32-bit Wifi+BLE RV32IMAFCX_Zifencei_Zicsr RISC-V [**SiFive E24 Core**](https://www.sifive.com/document-file/e24-core-complex-manual) (No bitmanip extension)
+>32-bit Wifi+BLE RV32IMFCX_Zifencei_Zicsr_Zaamo RISC-V [**SiFive E24 Core**](https://www.sifive.com/document-file/e24-core-complex-manual) (No bitmanip extension)
 
 single core microcontroller through practical examples __written in Assembly language__  
 
