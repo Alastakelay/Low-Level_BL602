@@ -2,9 +2,8 @@
 
 
 
-# Unfortunately, I can only contribute to this repo irregularly  
-# There's nothing I'd rather do than explore the mysteries of that interesting chip with fragmented documentation, but that will have to wait until **Summer 2026**  
-# The reason being the lack of contiguous time that I freely dispose of as a human in modern-day society  
+# I'm not working on this project full time as this is but a hobby for me  
+# Still, it's something I'm passionate about  
 # In the meantime enjoy what little code I have for you, consult the General E24 [core documentation](https://www.sifive.com/document-file/e24-core-complex-manual), and submit issues or ideas for current or future projects
 
 # BareMetal_BL602
@@ -14,19 +13,20 @@ This project aims to document and shed light on parts of the [**BouffaloLab602**
 
 single core microcontroller through practical examples __written in Assembly language__  
 
-This Repository was created out of frustration due to a general lack of good documentation  
-and practical bare-metal code examples for an otherwise amazing [**RISC-V**](https://riscv.org/) embedded chip, as well as curiosity for the RISC-V ISA and assembly language  
-There's also other cool RISC-V microcontrollers, like the RP2350/4A/B (with bitmanip), or ESP32-C/H/P series chips  
+This Repository was created out of frustration due to an overall lack of good documentation  
+and practical bare-metal code examples for an otherwise amazing [**RISC-V**](https://riscv.org/) embedded chip, as well as curiosity for the RISC-V ISA and assembly language in general  
+There's also other cool RISC-V microcontrollers, like the RP2350/4A/B (with bitmanip), ESP32-C/H/P series chips, or bao1x I encourage you to check out
 
 My goal is to improve documantation bit by byte by providing clean Assembly code,  
 through which the reader can get an understanding of *how exactly* they are supposed to interface  
 with internals and peripherals through [**MMIO**](https://en.wikipedia.org/wiki/Memory-mapped_I%2FO_and_port-mapped_I%2FO) without any confusing ***HALs*** or ***SDKs***  
 
->I will try to incrementally grow this collection of small programs and maintain it with my best efforts  
+>I will try to incrementally grow this collection of small programs and make an effort to maintain it  
 >All example code is assembled tested on the [PineCone EVB](https://pine64.org/documentation/PineCone/) (I also have binaries available)
 
 ## Online resources:
 - PineCone [schematics](https://github.com/pine64/bl602-docs/blob/main/mirrored/Pine64%20BL602%20EVB%20Schematic%20ver%201.1.pdf)
+- MMIO controlling c [functions from the SDK](https://github.com/pine64/bl_iot_sdk/tree/master/components/bl602/bl602_std/bl602_std/StdDriver/Src)
 
 ### Interrupt controller used in **BL602** (CLIC by SiFive):
   - General E24 [core documentation](https://www.sifive.com/document-file/e24-core-complex-manual)
