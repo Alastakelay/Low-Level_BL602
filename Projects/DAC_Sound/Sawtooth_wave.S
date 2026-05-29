@@ -1,9 +1,3 @@
-//this is a work in progress
-//as of right now it isn't fully functional
-//there are several things I'm still unsure of:
-/*  1. The correct clock configuration, and mode field in gpdac_config
-    2. Why the hell I don't see the periodic write to gpdac_data causing a change in output voltage on pin14 of the pinecone
-*/
 .section .text
 .globl _start
 .globl main
