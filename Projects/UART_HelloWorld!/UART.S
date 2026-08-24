@@ -1,4 +1,4 @@
-.equ magic_number, 0x128
+.equ magic_number, 0x15A
 .section .text
 .globl _start
 .globl main
@@ -18,13 +18,13 @@ main:
     li t5, 0x76543212                       //uart_sig_0_sel=2
     sw t5, 0xC0(s1)                         //UART_SIG_SEL_0
 
-//set UART clock source
+//set UART clock source   (leave it be, 160MHz by default)
 #    li t4, 0xAA0A0020                       //hbn_uart_clk_sel=0
 #    sw t4, 0x30(s2)                         //HBN_GLB
 
-//enable uart clk and set clock divider
-#    li t3, 0xFF8F2B10                       //UARTEN=1, UARTDIV=0
-#    sw t3, 0x8(s1)                          //clk_cfg2
+//enable uart clk and set clock divider    (UART source clock = 160MHz / 4 = 40 MHz)
+    li t3, 0xFF8F2B13                       //UARTEN=1, UARTDIV=3
+    sw t3, 0x8(s1)                          //clk_cfg2
 
 //set baud 115200 through bit period
     li t2, magic_number                     //TBITPRD=magic number (see end of file)
@@ -70,7 +70,7 @@ print:
     sb s11, 0x88(s0)
 
 //wait a bit for transmission to finish
-    li a6, 0x4000                           //wait so the tx fifo doesn't overflow
+    li a6, 0x40000                           //wait so the tx fifo doesn't overflow
     loop0:
         addi a6, a6, -1
         blt zero, a6, loop0
@@ -89,9 +89,12 @@ j print                                     //restart transmission
 
 //things I commented out are configured how we want them by default or have no impact on whether it works or not
 
-/*magic number: 
-    -found by trial and error 
-    -strangely indicates that UART source clock=~34.2Mhz:
-        -roughly 2000000Hz off from the closest clock source mentioned in the reference manual 
-    -please enlighten me
+/*
+"Baud rate = UART clock / (16-bit coefficient + 1)"
+
+magic number = y: 
+    115200 = 40000000 / (y + 1)
+    115200 * (y + 1) = 40000000
+    y + 1 = 40000000 / 115200
+    y = (40000000 / 115200) - 1
 */
