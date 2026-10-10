@@ -70,9 +70,9 @@ main:
 //timing setup
     //set channel 1 period
     write pwm1_period, period
-    //set channel 1 period
+    //set channel 1 threshold1
     write pwm1_thre1, threshold1
-    //set channel 1 period
+    //set channel 1 threshold2
     write pwm1_thre2, threshold2
 
 //fade led in and out by incrementing/decrementing threshold1 in a loop changing the duty cycle
